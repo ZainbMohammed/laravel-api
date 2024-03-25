@@ -22,14 +22,14 @@ Route::get('/hello',function(){
     return 'hello api';
 });
 Route::post('/hello',function(){
-    return response()->json(['data' => 'post request']);
+    return response()->json(['data' => ['mes' => 'post request']]);
 });
 Route::put('/hello',function(){
-    return response()->json(['data' => 'post request']);
+    return response()->json(['data' => ['mes' => 'put request']]);
 });
 Route::patch('/hello',function(){
-    return response()->json(['data' => 'post request']);
+    return response()->json(['data' => ['mes' => 'patch request']]);
 });
 Route::delete('/hello',function(){
-    return response()->json(['data' => 'post request']);
+    return response()->json(['data' => ['mes' => 'delete request']]);
 });
