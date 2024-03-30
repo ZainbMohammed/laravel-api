@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\userController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -37,3 +38,5 @@ Route::patch('/hello',function(){
 Route::delete('/hello',function(){
     return response()->json(['data' => ['mes' => 'delete request']]);
 });
+
+Route::post('/register',userController::class . '@register');
