@@ -42,4 +42,8 @@ Route::delete('/hello',function(){
 
 Route::post('/register',userController::class . '@register');
 
+// add new artical
 Route::post('/article',ArticalController::class . '@createArtical');
+
+// get all articals
+Route::get('/article',ArticalController::class . '@getAllArticals');
