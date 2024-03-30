@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticalController;
 use App\Http\Controllers\userController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -40,3 +41,5 @@ Route::delete('/hello',function(){
 });
 
 Route::post('/register',userController::class . '@register');
+
+Route::post('/article',ArticalController::class . '@createArtical');
