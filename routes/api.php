@@ -47,3 +47,9 @@ Route::post('/article',ArticalController::class . '@createArtical');
 
 // get all articals
 Route::get('/article',ArticalController::class . '@getAllArticals');
+
+// get specefic artical
+Route::get('/article/{id}',ArticalController::class . '@getArtical');
+
+// delete specefic artical
+Route::delete('/article/{id}',ArticalController::class . '@deleteArtical');
