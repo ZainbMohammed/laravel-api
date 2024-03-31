@@ -53,3 +53,6 @@ Route::get('/article/{id}',ArticalController::class . '@getArtical');
 
 // delete specefic artical
 Route::delete('/article/{id}',ArticalController::class . '@deleteArtical');
+
+// update specefic artical
+Route::delete('/article/{id}',ArticalController::class . '@updateArtical');

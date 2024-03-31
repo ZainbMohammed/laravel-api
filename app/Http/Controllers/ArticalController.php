@@ -30,4 +30,12 @@ class ArticalController extends Controller
         $artical->delete();
         return 'artical deleted successful';
     }
+
+    function updateArtical(Request $req, $id){
+        $artical = Artical::find($id);
+        $artical->title = $req->input('title');
+        $artical->body = $req->input('body');
+        $artical->save();
+        return $artical;
+    }
 }
