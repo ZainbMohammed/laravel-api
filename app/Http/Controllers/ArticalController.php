@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Artical;
+use App\Models\Articles;
 use Illuminate\Http\Request;
 
 class ArticalController extends Controller
 {
     //
     function createArtical(Request $req){
-        $artical = Artical::create([
+        $artical = Articles::create([
             "title" => 'AI',
             "body" => 'AI body',
         ]);
@@ -17,22 +17,22 @@ class ArticalController extends Controller
     }
 
     function getAllArticals(Request $req){
-        $articals = Artical::all();
+        $articals = Articles::all();
         return $articals;
     }
     function getArtical($id){
-        $artical = Artical::find($id);
+        $artical = Articles::find($id);
         return $artical;
     }
 
     function deleteArtical($id){
-        $artical = Artical::find($id);
+        $artical = Articles::find($id);
         $artical->delete();
         return 'artical deleted successful';
     }
 
     function updateArtical(Request $req, $id){
-        $artical = Artical::find($id);
+        $artical = Articles::find($id);
         $artical->title = $req->input('title');
         $artical->body = $req->input('body');
         $artical->save();
