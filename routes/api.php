@@ -53,7 +53,7 @@ Route::post('/login',userController::class . '@login');
 
 // ================= artical controller ===============
 // add new artical
-Route::post('/article',ArticalController::class . '@createArtical');
+Route::post('/article',ArticalController::class . '@createArtical')->middleware('auth:sanctum');
 
 // get all articals
 Route::get('/article',ArticalController::class . '@getAllArticals');
