@@ -40,6 +40,8 @@ Route::delete('/hello',function(){
     return response()->json(['data' => ['mes' => 'delete request']]);
 });
 
+// ================= user controller ===============
+
 // add new user
 Route::post('/register',userController::class . '@register');
 
@@ -47,6 +49,9 @@ Route::post('/register',userController::class . '@register');
 Route::get('/register',userController::class . '@getAllUsers');
 
 
+Route::post('/login',userController::class . '@login');
+
+// ================= artical controller ===============
 // add new artical
 Route::post('/article',ArticalController::class . '@createArtical');
 

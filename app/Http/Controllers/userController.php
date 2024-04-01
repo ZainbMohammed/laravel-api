@@ -22,7 +22,13 @@ class userController extends Controller
     }
 
     function login(Request $req){
-        $users = User::all();
-        return $users;
+        $user = User::where('email',$req->input('email'))->first();
+        if(!$user){
+            return response()->json(["message" => "user not found"]);
+        }
+        if(!$user->password != $req->input('password')){
+            return response()->json(["message" => "wrong password"]);
+        }
+        return $user;
     }
 }
