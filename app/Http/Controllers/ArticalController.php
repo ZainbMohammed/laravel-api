@@ -10,8 +10,8 @@ class ArticalController extends Controller
     //
     function createArtical(Request $req){
         $artical = Articles::create([
-            "title" => 'AI',
-            "body" => 'AI body',
+            "title" => $req->input('title'),
+            "body" => $req->input('body'),
         ]);
         return $artical;
     }

@@ -40,7 +40,12 @@ Route::delete('/hello',function(){
     return response()->json(['data' => ['mes' => 'delete request']]);
 });
 
+// add new user
 Route::post('/register',userController::class . '@register');
+
+// display all users
+Route::get('/register',userController::class . '@getAllUsers');
+
 
 // add new artical
 Route::post('/article',ArticalController::class . '@createArtical');
@@ -55,4 +60,4 @@ Route::get('/article/{id}',ArticalController::class . '@getArtical');
 Route::delete('/article/{id}',ArticalController::class . '@deleteArtical');
 
 // update specefic artical
-Route::delete('/article/{id}',ArticalController::class . '@updateArtical');
+Route::put('/article/{id}',ArticalController::class . '@updateArtical');

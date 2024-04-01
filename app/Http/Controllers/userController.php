@@ -9,10 +9,20 @@ class userController extends Controller
 {
     function register(Request $req){
         $user = User::create([
-            "name" => 'fatima',
-            "email" => 'fa@gmail.com',
-            "password" => '1234'
+            "name" => $req->input('name'),
+            "email" => $req->input('email'),
+            "password" => $req->input('password')
         ]);
         return $user;
+    }
+
+    function getAllUsers(Request $req){
+        $users = User::all();
+        return $users;
+    }
+
+    function login(Request $req){
+        $users = User::all();
+        return $users;
     }
 }
